@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Panel - WorkByVanz</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family: 'Inter', sans-serif; }
+    body { background:#f0f9ff; color:#1e3a8a; }
+    .container { max-width:1000px; margin:2rem auto; padding:0 1rem; }
+    header { text-align:center; margin-bottom:2rem; }
+    table { width:100%; border-collapse:collapse; background:white; border-radius:10px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.05); }
+    th, td { padding:1rem; text-align:left; border-bottom:1px solid #e2e8f0; }
+    th { background:#dbeafe; font-weight:600; }
+    .footer { margin-top:2rem; text-align:center; color:#4b5563; }
+    .footer a { color:#3b82f6; text-decoration:none; }
+    .btn { padding:0.4rem 0.8rem; background:#3b82f6; color:white; border:none; border-radius:4px; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>👑 Admin Panel - WorkByVanz</h1>
+      <p>Dikelola oleh <strong>Vanz</strong> | Kontak: <a href="https://t.me/VanzIsBack" target="_blank">@VanzIsBack</a></p>
+    </header>
+
+    <table id="userTable">
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>Nama</th>
+          <th>Saldo</th>
+          <th>Proyek</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <div class="footer">
+      <button onclick="logout()" style="margin-top:1rem; background:#ef4444;">Keluar</button>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const email = localStorage.getItem('currentUser');
+      const users = JSON.parse(localStorage.getItem('users')) || {};
+      if (!users[email]?.is_admin) return window.location.href = 'login.html';
+
+      const tbody = document.querySelector('tbody');
+      Object.values(users).forEach(user => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${user.email}</td>
+          <td>${user.name}</td>
+          <td>Rp ${user.balance.toLocaleString()}</td>
+          <td>${user.projects.length}</td>
+          <td><button class="btn" onclick="reset('${user.email}')">Reset Saldo</button></td>
+        `;
+        tbody.appendChild(tr);
+      });
+    });
+
+    function reset(email) {
+      const users = JSON.parse(localStorage.getItem('users')) || {};
+      if (users[email]) {
+        users[email].balance = 0;
+        users[email].projects = [];
+        localStorage.setItem('users', JSON.stringify(users));
+        location.reload();
+      }
+    }
+  </script>
+</body>
+</html>

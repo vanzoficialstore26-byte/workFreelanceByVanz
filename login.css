@@ -1,0 +1,118 @@
+/* css/login.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #dbeafe 0%, #f0f9ff 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 900px;
+  width: 100%;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.logo {
+  background: #3b82f6;
+  color: white;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  width: 100%;
+}
+
+.logo h1 {
+  font-size: 2.2rem;
+}
+.logo h1 span {
+  color: #bfdbfe;
+}
+.logo p {
+  margin-top: 0.5rem;
+  opacity: 0.9;
+}
+
+.login-form {
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 1.8rem;
+  color: #1e3a8a;
+}
+
+.input-group {
+  margin-bottom: 1.2rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #1e40af;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.85rem;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.btn-login {
+  width: 100%;
+  padding: 0.9rem;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-login:hover {
+  background: #2563eb;
+}
+
+.footer-note {
+  text-align: center;
+  margin-top: 1.8rem;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.footer-note a {
+  color: #3b82f6;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer-note a:hover {
+  text-decoration: underline;
+}

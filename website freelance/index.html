@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VanzXfreelance — Slot Machine</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>VanzXfreelance Slot</h1>
+      <div class="status">
+        <div class="balance">Saldo: <span id="balance">1000</span></div>
+        <div class="bet">
+          Taruhan: Rp <input id="betInput" type="number" min="1" step="1" value="10" /> 
+          <button id="maxBet">Max</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="slot-machine">
+        <div class="reel" id="reel1"><div class="symbol">🍒</div></div>
+        <div class="reel" id="reel2"><div class="symbol">🍋</div></div>
+        <div class="reel" id="reel3"><div class="symbol">🔔</div></div>
+      </div>
+
+      <div class="controls">
+        <button id="spinBtn">SPIN</button>
+        <button id="autoBtn">AUTO (10)</button>
+      </div>
+
+      <div class="info">
+        <div class="message" id="message">Selamat datang! Atur taruhan lalu tekan SPIN.</div>
+        <table class="paytable">
+          <caption>Paytable</caption>
+          <thead><tr><th>Hasil</th><th>Bayaran</th></tr></thead>
+          <tbody>
+            <tr><td>3 sama (🍒🍒🍒) / (🍋🍋🍋) / (🔔🔔🔔) / (⭐️⭐️⭐️)</td><td>x20</td></tr>
+            <tr><td>3 sama (lain)</td><td>x10</td></tr>
+            <tr><td>2 sama</td><td>x2</td></tr>
+            <tr><td>Tidak sama</td><td>-</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <footer>
+      <small>Made with ♥ by VanzXfreelance</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Upload Portofolio</title>
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <style>
+    .upload-area {
+      border: 2px dashed #cbd5e1;
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      cursor: pointer;
+    }
+    .preview {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .preview img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <div class="logo"><h2>Freelancer<span>Hub</span></h2></div>
+      <nav class="menu">
+        <a href="dashboard.html">📊 Dasbor</a>
+        <a href="freelancers.html">👥 Freelancer</a>
+        <a href="portfolio-upload.html" class="active">📤 Upload Portofolio</a>
+        <a href="index.html" class="logout">🚪 Keluar</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <h1>Upload Portofolio Anda</h1>
+      <p>Tambahkan proyek terbaikmu agar klien tertarik!</p>
+
+      <div class="upload-area" id="dropArea">
+        <p>📁 Seret file gambar ke sini atau klik untuk memilih</p>
+        <input type="file" id="fileInput" accept="image/*" multiple style="display:none;">
+      </div>
+
+      <div class="preview" id="preview"></div>
+
+      <button id="saveBtn" class="btn" style="
+        background:#4f46e5; color:white; padding:0.7rem 1.5rem; border:none; border-radius:6px; margin-top:1rem;
+      ">Simpan Portofolio</button>
+    </main>
+  </div>
+
+  <script src="js/upload.js"></script>
+  <script src="js/notify.js"></script>
+</body>
+</html>
